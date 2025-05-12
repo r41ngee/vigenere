@@ -26,5 +26,27 @@ def cypher(word: str, key: str) -> str:
     return result
 
 
+def decypher(crypted: str, key: str) -> str:
+    key = key.lower()
+    crypted = crypted.lower()
+
+    if len(crypted) > len(key):
+        key = word_fill(key, crypted)
+
+    result = ""
+
+    for i in range(len(crypted)):
+        if crypted[i] not in ALPHABET:
+            result += crypted[i]
+            continue
+
+        new_char = ALPHABET[ALPHABET.index(crypted[i]) - ALPHABET.index(key[i]) % 26]
+        result += new_char
+
+    return result
+
+
 if __name__ == "__main__":
-    print(cypher("ATTACKATDAWN", "LEMON"))
+    encrypted = cypher("ATTACKATDAWN", "LEMON")
+    print(encrypted)
+    print(decypher(encrypted, "LEMON"))
