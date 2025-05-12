@@ -44,9 +44,3 @@ def decypher(crypted: str, key: str) -> str:
         result += new_char
 
     return result
-
-
-if __name__ == "__main__":
-    encrypted = cypher("ATTACKATDAWN", "LEMON")
-    print(encrypted)
-    print(decypher(encrypted, "LEMON"))
