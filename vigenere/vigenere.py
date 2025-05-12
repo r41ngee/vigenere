@@ -3,7 +3,7 @@ from fill import word_fill
 ALPHABET = [chr(i).lower() for i in range(97, 123)]
 
 
-def cypher(word: str, key: str) -> str:
+def encrypt(word: str, key: str) -> str:
     word = word.lower()
     key = key.lower()
 
@@ -26,7 +26,7 @@ def cypher(word: str, key: str) -> str:
     return result
 
 
-def decypher(crypted: str, key: str) -> str:
+def decrypt(crypted: str, key: str) -> str:
     key = key.lower()
     crypted = crypted.lower()
 
