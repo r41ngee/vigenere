@@ -11,7 +11,3 @@ def word_fill(key: str, word_size: int) -> str:
             tempkey += key[i % key_size]
 
         return tempkey
-
-
-if __name__ == "__main__":
-    print(word_fill("lemon", len("lemon")))
