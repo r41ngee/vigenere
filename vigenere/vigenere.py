@@ -20,7 +20,7 @@ def cypher(word: str, key: str) -> str:
         key_char = key[i]
         word_char = word[i]
 
-        new_index = (ALPHABET.index(word_char) + ALPHABET.index(key_char)) % 25
+        new_index = (ALPHABET.index(word_char) + ALPHABET.index(key_char)) % 26
         result += ALPHABET[new_index]
 
     return result
