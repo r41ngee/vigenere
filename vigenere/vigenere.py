@@ -8,7 +8,7 @@ def cypher(word: str, key: str) -> str:
     key = key.lower()
 
     if len(word) > len(key):
-        key = word_fill(key, len(word))
+        key = word_fill(key, word)
 
     result = ""
 
