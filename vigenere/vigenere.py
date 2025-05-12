@@ -13,10 +13,15 @@ def cypher(word: str, key: str) -> str:
     result = ""
 
     for i in range(len(word)):
-        key_lit = key[i]
-        word_lit = word[i]
+        if word[i] not in ALPHABET:  # Пропускаем не-буквы
+            result += word[i]
+            continue
 
-        result += ALPHABET[(ALPHABET.index(key_lit) + ALPHABET.index(word_lit)) % 25]
+        key_char = key[i]
+        word_char = word[i]
+
+        new_index = (ALPHABET.index(word_char) + ALPHABET.index(key_char)) % 25
+        result += ALPHABET[new_index]
 
     return result
 
