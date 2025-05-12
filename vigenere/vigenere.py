@@ -30,7 +30,8 @@ def decypher(crypted: str, key: str) -> str:
     key = key.lower()
     crypted = crypted.lower()
 
-    key = word_fill(key, crypted)
+    if len(crypted) > len(key):
+        key = word_fill(key, crypted)
 
     result = ""
 
